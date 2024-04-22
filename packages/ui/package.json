@@ -1,0 +1,13 @@
+{
+  "name": "@test-compilers/ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0"
+  }
+}

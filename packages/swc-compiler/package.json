@@ -1,0 +1,17 @@
+{
+  "name": "swc-compiler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=development webpack serve --open",
+    "build": "NODE_ENV=production webpack build"
+  },
+  "dependencies": {
+    "@test-compilers/ui": "1.0.0"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.4.16",
+    "swc-loader": "^0.2.6"
+  }
+}
