@@ -4,15 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development webpack serve --open",
-    "build": "NODE_ENV=production webpack build",
-    "build-loop": "bash build_loop.sh"
+    "start-with-ts-loader": "NODE_ENV=development webpack serve --open --env has-ts-loader",
+    "build-with-ts-loader": "NODE_ENV=production webpack build --env has-ts-loader",
+    "build-loop-with-ts-loader": "BUILD_COMMAND=build-with-ts-loader bash build_loop.sh",
+    "start-with-babel-preset": "NODE_ENV=development webpack serve --open has-babel-preset",
+    "build-with-babel-preset": "NODE_ENV=production webpack build --env has-babel-preset",
+    "build-loop-with-babel-preset": "BUILD_COMMAND=build-with-babel-preset bash build_loop.sh"
   },
   "dependencies": {
     "@test-compilers/ui": "1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "babel-loader": "^9.1.3",
     "ts-loader": "^9.5.1"
   }

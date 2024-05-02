@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const hasBabelPreset = process.argv.includes('has-babel-preset');
+const hasTsLoader = process.argv.includes('has-ts-loader');
+
 module.exports = {
   entry: './src/index.tsx',
   mode: process.env.NODE_ENV,
@@ -19,10 +22,17 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
+            ...(hasBabelPreset ? {
+              options: {
+                presets: [
+                  '@babel/preset-env',
+                  '@babel/preset-typescript',
+                  '@babel/preset-react',
+                ]
+              }
+            } : {}),
           },
-          {
-            loader: 'ts-loader',
-          }
+          ...(hasTsLoader ? [{ loader: 'ts-loader' }] : []),
         ],
       },
     ],
